@@ -1,0 +1,752 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+
+:root {
+  --main-red: #ff0000;
+  --dark-red: #cc0000;
+  --blue: #3b4cca;
+  --main-yellow: #ffde00;
+  --gold: #b3a125;
+}
+
+/* body { background-color: var(--blue); }*/
+
+/************************************************* CLEAR FIX *************************************************/
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+/************************************************* GLOBAL *************************************************/
+
+body {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: var(--main-red) solid 2px;
+}
+
+input {
+  padding: 0.8rem;
+  border: #aeaeae solid 2px;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  font-size: 1.1rem;
+  color: #444;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+select:required:invalid {
+  color: #666;
+}
+
+select {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  border: #aeaeae solid 2px;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: #444;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.search {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--main-red);
+  border-radius: 100%;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-left: 0.5rem;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.search:hover {
+  background-color: var(--dark-red);
+}
+
+.filters {
+  /*margin-top: 1rem;
+  margin-bottom: 0;*/
+  margin: 1rem;
+  width: 67%;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.pagination___nav {
+  display: flex;
+  width: 15rem;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.circle__bg {
+  margin-left: 0.3rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.288);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.circle__bg:hover {
+  cursor: pointer;
+  background-color: var(--dark-red);
+  border-radius: 100%;
+}
+
+.header {
+  position: sticky;
+  height: 6rem;
+  background-color: var(--main-red);
+  box-sizing: border-box;
+}
+
+.header--content {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.container {
+  padding: 0;
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pokemon__container {
+  margin-top: -4rem;
+  width: 70%;
+  height: 76vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.detail__header {
+  /*margin-top: 0.9rem;
+  margin-left: 1.1rem;*/
+  margin: 2rem;
+  width: 25vw;
+  padding: 0.9rem;
+  background-color: #fff;
+  color: #444;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  display: flex;
+}
+
+.detail__header img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.pokemon__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*margin-top: 10rem;
+  */
+  width: 20vw;
+  height: 65vh;
+  padding: 4rem;
+  background-color: #fc3131;
+  color: white;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.pokemon__img--detail {
+  position: relative;
+  z-index: 2;
+  width: 10rem;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.pokemon__details .id {
+  color: #ebebeb;
+  font-weight: 400;
+}
+
+.pokemon__details .placeholder {
+  opacity: 0.5;
+  width: 12rem;
+  height: auto;
+}
+
+.pokemon__details .placeholder--small {
+  opacity: 0.5;
+  width: 4rem;
+  height: auto;
+}
+
+.stats {
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+}
+
+.type__name {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.stat__value {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.evolution {
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  padding: 2rem;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.evolution h3 {
+  margin: 0 0 1rem 0;
+}
+
+.evolution__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3rem;
+}
+
+/************************************************* COMPONENETS *************************************************/
+
+.btn {
+  max-width: 8rem;
+  max-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  color: rgb(82, 82, 82);
+  background-color: rgb(236, 236, 236);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.btn:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgba(255, 23, 23, 0.452);
+}
+
+.btn i {
+  margin: 0.3rem;
+}
+
+.card {
+  margin: 7rem 0.5rem 0rem 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  /*border: solid #666 2px;*/
+  padding: 2.7rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translate(0, -0.6rem);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.1),
+    0 15px 40px rgba(166, 173, 201, 0.4);
+  /*border: solid #666 2px;
+  */
+  -webkit-transform: translate(1rem);
+  -moz-transform: translate(0, -0.6rem);
+  -ms-transform: translate(0, -0.6rem);
+  -o-transform: translate(0, -0.6rem);
+  -webkit-transform: translate(0, -0.6rem);
+}
+
+.favorit {
+  max-width: 2rem;
+  max-height: 2rem;
+  color: var(--main-red);
+  margin: 0.6rem;
+  padding: 0.4rem;
+  font-size: 1.1rem;
+  background-color: rgba(202, 202, 202, 0.452);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.favorit:hover {
+  cursor: pointer;
+  background-color: rgba(255, 23, 23, 0.452);
+}
+
+.add__favorit {
+  max-width: 2rem;
+  max-height: 2rem;
+  color: var(--main-red);
+  margin: 0.7rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  background-color: rgba(255, 23, 23, 0.452);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.add__favorit:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--main-red);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loader {
+  margin: 0 auto;
+}
+
+.loader img {
+  position: absolute;
+  z-index: 2;
+  top: 45%;
+  left: 45%;
+  width: 3rem;
+  height: 3rem;
+  animation: fade 1s infinite ease-in-out;
+  -webkit-animation: fade 1s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/************************************************* TYPES **************************************************/
+
+.type {
+  margin-right: 0.7rem;
+  padding: 0.7em;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.subtype--flying,
+.type--flying {
+  background-color: #f0f0f0;
+  color: #b3b3b3;
+}
+
+.subtype--fire,
+.type--fire {
+  background-color: #ffa600;
+  color: #4d3407;
+}
+
+.subtype--electric,
+.type--electric {
+  background-color: #ffee00;
+  color: #000000;
+}
+
+.subtype--fairy,
+.type--fairy {
+  background-color: #ff9bfa;
+  color: #83127d;
+}
+
+.subtype--normal,
+.type--normal {
+  background-color: #f0f0f0;
+  color: #272727;
+}
+
+.subtype--ground,
+.type--ground {
+  background-color: #e7a042;
+  color: #5a3709;
+}
+
+.subtype--rock,
+.type--rock {
+  background-color: #442700;
+  color: #cacaca;
+}
+
+.subtype--poison,
+.type--poison {
+  background-color: #c262ee;
+  color: #560b79;
+}
+
+.subtype--steel,
+.type--steel {
+  background-color: #a1a1a1;
+  color: #252525;
+}
+
+.subtype--grass,
+.type--grass {
+  background-color: #80c477;
+  color: #13410d;
+}
+
+.subtype--dark,
+.type--dark {
+  background-color: #000000;
+  color: #9c51ff;
+}
+
+.subtype--water,
+.type--water {
+  background-color: #4791ff;
+  color: #092f68;
+}
+
+.subtype--bug,
+.type--bug {
+  background-color: #00ff0d;
+  color: #000000;
+}
+
+.subtype--fighting,
+.type--fighting {
+  background-color: #fa5a5a;
+  color: #7e0e0e;
+}
+
+.subtype--psychic,
+.type--psychic {
+  background-color: #fa5aed;
+  color: #7e0e7e;
+}
+
+.subtype--ghost,
+.type--ghost {
+  background-color: #1d1d1d;
+  color: #a0a0a0;
+}
+
+.subtype--ice,
+.type--ice {
+  background-color: #7bd6ec;
+  color: #186b80;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pokemon__img {
+  position: relative;
+  z-index: 2;
+  width: 12rem;
+  height: auto;
+  margin-top: -9rem;
+  margin-bottom: 0;
+}
+
+.id {
+  font-weight: 800;
+  color: #aeaeae;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+/****************************************** Search field ******************************************/
+
+form {
+  display: flex;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid var(--main-red);
+  border-right: none;
+  padding: 0.5rem;
+  height: 2rem;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #444;
+}
+
+.searchButton {
+  width: 4rem;
+  height: 3.4rem;
+  border: 1px solid var(--main-red);
+  background: var(--main-red);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+/************************************************* FAVORITE LIST *************************************************/
+
+.fav__list {
+  position: absolute;
+  z-index: 99999;
+  max-width: 100rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 75%;
+  right: 5%;
+  background-color: #fff;
+  color: #444;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.fav__pokemon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #fff;
+
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.fav__pokemon:hover {
+  background-color: rgba(255, 97, 97, 0.452);
+}
+
+.fav__pokemon__img {
+  width: 4rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+/*# sourceMappingURL=index.ea68c68a.css.map */

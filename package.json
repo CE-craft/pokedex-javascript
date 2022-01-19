@@ -1,0 +1,35 @@
+{
+  "type": "module",
+  "name": "pokedex",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "CE.CRAFT",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.2",
+    "@babel/runtime": "^7.14.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "parcel": "^2.0.0-beta.2",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "config.js": "^0.1.0",
+    "core-js": "^3.12.1",
+    "fractional": "^1.0.0",
+    "img": "^3.0.3",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
